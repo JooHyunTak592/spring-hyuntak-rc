@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+    <meta charset="UTF-8">
+	<title>Seoul Tech RC</title>
+	
+	<!-- CSS -->
+	<link th:href="@{/styles/main.css}" rel="stylesheet" />
+	<link th:href="@{/styles/menu1.css}" rel="stylesheet" />
+	
+	<!-- Script -->
+	<script type="text/javascript" th:src="@{/js/menu1.js}"></script>
+	<script type="text/javascript" th:src="@{/js/voice_to_text.js}"></script>
+	
+	<!-- fontawesome CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+</head> 
+
+<body class="bg-2">
+
+<img th:src="@{/images/bg3.jpg}" class="myBg">
+
+
+
+<div class="flex-box">
+	<div class="rec-area">
+	<div class="ra-bg"></div>
+	
+	
+	
+	<div id="menu-area" class="active">
+		<div class="pic-flex-area">
+			<img th:src="@{/images/dog-c1.png}" class="profile-pic">
+		</div>
+			<div class="btn-area">
+			<div class="btn" id="" onclick="runSpeechRecognition()">음성인식</div>
+			<div class="btn" onclick="healingMusic()">힐링음악</div>
+			<div class="btn" onclick="logout()"> 로그아웃</div>
+			</div>
+	</div>
+	
+	<div id="voice-area" class="inactive">
+		<div class="text-flex-area">
+			<i class="fas fa-microphone">
+			
+			</i>
+		</div>
+			<div class="mike-text-area">
+			<div id="voice-result" class="mike-text">인식중</div>
+			</div>
+	</div>
+	
+
+		
+	</div>
+</div>
+
+
+<!--  
+<h1>Hello</h1>
+<a th:href="@{/n2021/learn/canvas1}"> 캔버스 배우기1 </a><br />
+<a th:href="@{/n2021/learn/canvas2}"> 캔버스 배우기2 </a><br />
+<a th:href="@{/n2021/learn/module}"> 모듈 공부 </a><br />
+<a th:href="@{/n2021/minigame/car-racer}"> 미니게임 / 자동차 경주 </a><br />
+-->
+
+
+
+</body> 
+
+</html>

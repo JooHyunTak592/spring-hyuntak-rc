@@ -5,46 +5,50 @@
 
 <head>
     <meta charset="UTF-8">
-	<title>웹페이지 제목</title>
+	<title>Seoul Tech RC</title>
 	
 	<!-- CSS -->
 	<link th:href="@{/styles/main.css}" rel="stylesheet" />
-
-	<!-- Script -->
-	<script type="text/javascript" th:src="@{/js/n2021/async_programming/async.js}"></script>
+	<link th:href="@{/styles/index.css}" rel="stylesheet" />
 	
-	<!-- 실시간 마우스 위치 표시 -->
-	<script type="text/javascript" th:src="@{/js/n2021/async_programming/get_mouse_position.js}"></script>
+	<!-- Script -->
+	<script type="text/javascript" th:src="@{/js/index.js}"></script>
+
 </head> 
 
-<body id="para">
+<body class="bg-1">
+
+<div class="flex-box">
+	<div class="rec-area">
+	<div class="ra-bg"></div>
+	
+	<div class="pic-flex-area">
+		<img th:src="@{/images/dog-c1.png}" class="profile-pic">
+	</div>
+	
+
+		<div class="form-area">
+		<input class="input-area" />
+		<input class="input-area" />
+		</div>
+		<div class="btn-area">
+		<div class="btn" id="" onclick="nextPage()">로그인</div>
+		<div class="btn">회원가입</div>
+		</div>
+		
+	</div>
+</div>
 
 
+<!--  
 <h1>Hello</h1>
-
 <a th:href="@{/n2021/learn/canvas1}"> 캔버스 배우기1 </a><br />
 <a th:href="@{/n2021/learn/canvas2}"> 캔버스 배우기2 </a><br />
-
-
-
-
 <a th:href="@{/n2021/learn/module}"> 모듈 공부 </a><br />
 <a th:href="@{/n2021/minigame/car-racer}"> 미니게임 / 자동차 경주 </a><br />
+-->
 
 
-
-
-<div class="box">
-  <p>
-    Move the mouse around in this box to watch its coordinates change.
-  </p>
-  <p>
-    <code>pageX</code>: <span id="x">n/a</span>
-  </p>
-  <p>
-    <code>pageY</code>: <span id="y">n/a</span>
-  </p>
-</div>
 
 </body> 
 

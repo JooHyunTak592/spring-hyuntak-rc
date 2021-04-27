@@ -12,9 +12,9 @@ public class MainController {
 		return "view/index.html";
 	}
 	
-	@GetMapping("/login")
+	@GetMapping("/menu1")
 	public String loginPage() {
-		return "main/login.html";
+		return "view/menu1.html";
 	}
 
 	@GetMapping("/join")
