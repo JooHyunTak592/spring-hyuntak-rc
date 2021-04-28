@@ -11,10 +11,6 @@
 	<link th:href="@{/styles/main.css}" rel="stylesheet" />
 	<link th:href="@{/styles/menu1.css}" rel="stylesheet" />
 	
-	<!-- Script -->
-	<script type="text/javascript" th:src="@{/js/menu1.js}"></script>
-	<script type="text/javascript" th:src="@{/js/voice_to_text.js}"></script>
-	
 	<!-- fontawesome CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 
@@ -37,9 +33,9 @@
 			<img th:src="@{/images/dog-c1.png}" class="profile-pic">
 		</div>
 			<div class="btn-area">
-			<div class="btn" id="" onclick="runSpeechRecognition()">음성인식</div>
-			<div class="btn" onclick="healingMusic()">힐링음악</div>
-			<div class="btn" onclick="logout()"> 로그아웃</div>
+			<div class="btn" id="recog-btn">음성인식</div>
+			<div class="btn" id="logout-btn">힐링음악</div>
+			<div class="btn" id="music-btn"> 로그아웃</div>
 			</div>
 	</div>
 	
@@ -69,6 +65,11 @@
 -->
 
 
+
+
+	<!-- Script -->
+	<script type="text/javascript" th:src="@{/js/menu1.js}"></script>
+	<script type="text/javascript" th:src="@{/js/voice_to_text.js}"></script>
 
 </body> 
 

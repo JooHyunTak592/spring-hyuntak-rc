@@ -4,6 +4,19 @@
 let counter = 0;
 let timerTime = [3000, 1500];
 
+
+let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
+
+document.getElementById("recog-btn").addEventListener(touchEvent, runSpeechRecognition);
+
+
+
+
+
+
+
+
+
 function runSpeechRecognition() {
 	
     // get output div reference
