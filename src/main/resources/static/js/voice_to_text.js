@@ -4,19 +4,6 @@
 let counter = 0;
 let timerTime = [3000, 1500];
 
-
-let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
-
-document.getElementById("recog-btn").addEventListener(touchEvent, runSpeechRecognition);
-
-
-
-
-
-
-
-
-
 function runSpeechRecognition() {
 	
     // get output div reference
@@ -56,6 +43,7 @@ function runSpeechRecognition() {
 			
         output.innerHTML = transcript;
 
+
     };
   
      // start recognition
@@ -64,7 +52,28 @@ function runSpeechRecognition() {
 }
 
 
+let ctx = "";
+
 function rcCarOrderFn(str){
+	
+	
+	if(str.includes("앞") || str.includes("전진")){
+		
+	fetch(ctx + '?cmd=STOP');
+		console.log("앞으로 갑니다");
+		
+	}
+	else if(str.includes("왼쪽") || str.includes("좌")){
+		console.log("촤측으로 갑니다");
+		
+	}
+	else if(str.includes("오른쪽") || str.includes("우")){
+		console.log("우측로 갑니다");
+		
+	}
+	
+	
+	
 	console.log(str);
 }
 
