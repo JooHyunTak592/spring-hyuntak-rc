@@ -6,6 +6,11 @@ let timerTime = [3000, 1500];
 
 function runSpeechRecognition() {
 	
+	if(musicIsOn == true){
+		musicIsOn = false;
+		audioObj.pause();
+	}
+	
     // get output div reference
     var output = document.getElementById("voice-result");
 
@@ -55,7 +60,7 @@ function runSpeechRecognition() {
 let ctx = "http://192.168.219.194/";
 
 function rcCarOrderFn(str){
-	
+	console.log("받은 값 " + str);
 	const myTime = 1500;
 	
 	
@@ -100,8 +105,7 @@ function rcCarOrderFn(str){
 		rcCmdFn("STOP");
 		console.log("멈춰");
 	}
-	
-	else if(str.includes("후진") || str.includes("빽") || str.includes("뒤") || str.include("백") ){
+	else if(str.includes("후진") || str.includes("빽") || str.includes("뒤") || str.includes("백") ){
 		rcCmdFn("BACK");
 		console.log("뒤로가");
 		setTimeout(function(){ rcCmdFn("STOP"); }, myTime);
@@ -112,7 +116,7 @@ function rcCarOrderFn(str){
 	}
 	
 	
-	console.log(str);
+	
 }
 
 
