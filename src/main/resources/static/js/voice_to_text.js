@@ -57,7 +57,10 @@ let ctx = "http://192.168.219.194/";
 function rcCarOrderFn(str){
 	
 	const myTime = 1500;
-	
+	if(str.includes("쭉")){
+		rcCmdFn("GO");
+		console.log("계속 앞으로 갑니다");
+	}
 	if(str.includes("앞") || str.includes("전진")){
 		rcCmdFn("GO");
 		console.log("앞으로 갑니다");
