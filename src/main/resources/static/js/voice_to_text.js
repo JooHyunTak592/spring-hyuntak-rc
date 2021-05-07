@@ -56,21 +56,22 @@ let ctx = "http://192.168.219.194/";
 
 function rcCarOrderFn(str){
 	
+	const myTime = 1500;
 	
 	if(str.includes("앞") || str.includes("전진")){
 		rcCmdFn("GO");
 		console.log("앞으로 갑니다");
-		
+		setTimeout(function(){ rcCmdFn("STOP"); }, myTime);
 	}
 	else if(str.includes("왼쪽") || str.includes("좌")){
 		rcCmdFn("LEFT");
 		console.log("왼쪽으로 갑니다");
-		
+		setTimeout(function(){ rcCmdFn("STOP"); }, myTime);
 	}
 	else if(str.includes("오른쪽") || str.includes("우")){
 		rcCmdFn("RIGHT");
 		console.log("우측로 갑니다");
-		
+		setTimeout(function(){ rcCmdFn("STOP"); }, myTime);
 	}
 	else if(str.includes("정지")|| str.includes("멈춰") || str.includes("스톱")){
 		rcCmdFn("STOP");
@@ -80,6 +81,7 @@ function rcCarOrderFn(str){
 	else if(str.includes("후진") || str.includes("빽") || str.includes("뒤") || str.include("백") ){
 		rcCmdFn("BACK");
 		console.log("뒤로가");
+		setTimeout(function(){ rcCmdFn("STOP"); }, myTime);
 	}
 	else{
 		console.log("인식불가");
