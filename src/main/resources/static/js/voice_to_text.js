@@ -57,11 +57,31 @@ let ctx = "http://192.168.219.194/";
 function rcCarOrderFn(str){
 	
 	const myTime = 1500;
-	if(str.includes("쭉")){
-		rcCmdFn("GO");
-		console.log("계속 앞으로 갑니다");
+	
+	
+	if(str.includes("쭉") || str.includes("개속") || str.includes("계속") || str.includes("게속")){
+		if(str.includes("앞") || str.includes("전진")){
+			rcCmdFn("GO");
+			console.log("앞으로 갑니다");
+		}
+		else if(str.includes("왼쪽") || str.includes("좌")){
+			rcCmdFn("LEFT");
+			console.log("왼쪽으로 갑니다");
+		}
+		else if(str.includes("오른쪽") || str.includes("우")){
+			rcCmdFn("RIGHT");
+			console.log("우측로 갑니다");
+		}
+		else if(str.includes("후진") || str.includes("빽") || str.includes("뒤") || str.include("백") ){
+			rcCmdFn("BACK");
+			console.log("뒤로가");
+		}
 	}
-	if(str.includes("앞") || str.includes("전진")){
+	//////////////////
+	
+	
+	
+	else if(str.includes("앞") || str.includes("전진")){
 		rcCmdFn("GO");
 		console.log("앞으로 갑니다");
 		setTimeout(function(){ rcCmdFn("STOP"); }, myTime);
