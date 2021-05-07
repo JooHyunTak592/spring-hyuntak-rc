@@ -58,19 +58,25 @@ function rcCarOrderFn(str){
 	
 	
 	if(str.includes("앞") || str.includes("전진")){
-		rcCmdFn();
+		rcCmdFn("GO");
 		console.log("앞으로 갑니다");
 		
 	}
 	else if(str.includes("왼쪽") || str.includes("좌")){
-		console.log("촤측으로 갑니다");
+		rcCmdFn("LEFT");
+		console.log("왼쪽으로 갑니다");
 		
 	}
 	else if(str.includes("오른쪽") || str.includes("우")){
+		rcCmdFn("RIGHT");
 		console.log("우측로 갑니다");
 		
 	}
-	
+	else if(str.includes("뒤로") || str.includes("빽") || str.includes("멈춰") || str.includes("스톱")){
+		rcCmdFn("STOP");
+		console.log("멈춰");
+		
+	}
 	
 	
 	console.log(str);
@@ -86,9 +92,9 @@ function getContextPath() {
 }
 
 
-function rcCmdFn(){
+function rcCmdFn(str){
 	var request = new XMLHttpRequest();
-	request.open("Get", getContextPath()+"/api/go");
+	request.open("Get", getContextPath()+"/api/rc" +"?cmd="+str);
 	request.onreadystatechange = hello(request);
 	request.send(null);
 }

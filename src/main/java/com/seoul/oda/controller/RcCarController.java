@@ -6,6 +6,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.seoul.oda.dto.Message;
@@ -15,12 +16,20 @@ import com.seoul.oda.dto.Message;
 @RequestMapping("/api")
 public class RcCarController {
 
-	@RequestMapping("/go")
-	public Message cmdGo() throws IOException {
-		System.out.println("앞으로갑니다");
+	@RequestMapping("rc")
+	public Message cmdGo(
+			@RequestParam(value = "cmd") String cmd
+			) throws IOException {
 		
 		
-		String domain = "http://192.168.219.194/?cmd=GO";
+		System.out.println(cmd);
+		if(cmd == null) {
+			
+		}
+
+		
+		
+		String domain = "http://192.168.219.194/?cmd="+cmd;
 
 		try {
 
