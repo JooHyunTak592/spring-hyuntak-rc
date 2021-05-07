@@ -52,14 +52,13 @@ function runSpeechRecognition() {
 }
 
 
-let ctx = "";
+let ctx = "http://192.168.219.194/";
 
 function rcCarOrderFn(str){
 	
 	
 	if(str.includes("앞") || str.includes("전진")){
-		
-	fetch(ctx + '?cmd=STOP');
+		rcCmdFn();
 		console.log("앞으로 갑니다");
 		
 	}
@@ -78,7 +77,33 @@ function rcCarOrderFn(str){
 }
 
 
+//
+// AJAX 통신
+//
 
+function getContextPath() {
+   return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+}
+
+
+function rcCmdFn(){
+	var request = new XMLHttpRequest();
+	request.open("Get", getContextPath()+"/api/go");
+	request.onreadystatechange = hello(request);
+	request.send(null);
+}
+
+
+
+	
+function hello(request){
+	
+	if(request.readyState==4 && request.status==200){
+
+	// 성공시
+
+	}
+}
 
 
 
