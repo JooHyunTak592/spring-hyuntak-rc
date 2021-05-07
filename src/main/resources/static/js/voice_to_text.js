@@ -72,9 +72,13 @@ function rcCarOrderFn(str){
 		console.log("우측로 갑니다");
 		
 	}
-	else if(str.includes("뒤로") || str.includes("정지") || str.includes("빽") || str.includes("멈춰") || str.includes("스톱")){
+	else if(str.includes("정지")|| str.includes("멈춰") || str.includes("스톱")){
 		rcCmdFn("STOP");
 		console.log("멈춰");
+	}
+	else if(str.includes("후진") || str.includes("빽") || str.includes("뒤") || str.include("백")){
+		rcCmdFn("BACK");
+		console.log("뒤로가");
 		
 	}
 	
