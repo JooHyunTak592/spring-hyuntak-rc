@@ -12,16 +12,10 @@ public class MainController {
 		return "view/index.html";
 	}
 	
+	
 	@GetMapping("/menu1")
 	public String loginPage() {
 		return "view/menu1.html";
 	}
-
-	@GetMapping("/join")
-	public String joinPage() {
-		return "main/join.html";
-	}
-	
-	
 }
 

@@ -8,15 +8,17 @@
 	<title>Seoul Tech RC</title>
 	
 	<!-- CSS -->
-	<link th:href="@{/styles/main.css}" rel="stylesheet" />
 	<link th:href="@{/styles/index.css}" rel="stylesheet" />
 	
-	<!-- Script -->
-	<script type="text/javascript" th:src="@{/js/index.js}"></script>
-
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 </head> 
 
 <body class="bg-1">
+
+<div id="nav-bar" ></div>
+
+
 
 <div class="flex-box">
 	<div class="rec-area">
@@ -32,7 +34,7 @@
 		<input class="input-area" />
 		</div>
 		<div class="btn-area">
-		<div class="btn" id="" onclick="nextPage()">로그인</div>
+		<div class="btn" id="login-button">로그인</div>
 		<div class="btn">회원가입</div>
 		</div>
 		
@@ -40,15 +42,49 @@
 </div>
 
 
-<!--  
-<h1>Hello</h1>
-<a th:href="@{/n2021/learn/canvas1}"> 캔버스 배우기1 </a><br />
-<a th:href="@{/n2021/learn/canvas2}"> 캔버스 배우기2 </a><br />
-<a th:href="@{/n2021/learn/module}"> 모듈 공부 </a><br />
-<a th:href="@{/n2021/minigame/car-racer}"> 미니게임 / 자동차 경주 </a><br />
--->
+  <!-- Compiled and minified JavaScript -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
 
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
 
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyCB1k67aIEBHFqPh2OWJlZ4JDk4_wu4Ye4",
+        authDomain: "fir-project-f5718.firebaseapp.com",
+        projectId: "fir-project-f5718",
+        storageBucket: "fir-project-f5718.appspot.com",
+        messagingSenderId: "285234920635",
+        appId: "1:285234920635:web:818c23d20337960e037d9e",
+        measurementId: "G-Q2GXCRLS2L"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    // maake auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    // update firestore setting
+    db.settings({timestampsInSnapshots: true});
+    </script>
+
+	<!-- Script -->
+	<script type="module" th:src="@{/js/index.js}">
+	</script>
+	
+	<script>
+		import { nextPage } from "../../static/js/index.js";
+		
+	</script>
+	
 
 </body> 
 

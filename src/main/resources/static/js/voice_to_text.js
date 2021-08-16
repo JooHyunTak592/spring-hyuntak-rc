@@ -57,7 +57,7 @@ function runSpeechRecognition() {
 }
 
 
-let ctx = "http://192.168.219.194/";
+//let ctx = "http://192.168.219.194/";
 
 function rcCarOrderFn(str){
 	console.log("받은 값 " + str);
