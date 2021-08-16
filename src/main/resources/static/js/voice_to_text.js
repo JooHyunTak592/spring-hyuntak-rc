@@ -132,14 +132,14 @@ function getContextPath() {
 function rcCmdFn(str){
 	var request = new XMLHttpRequest();
 	request.open("Get", getContextPath()+"/api/rc" +"?cmd="+str);
-	request.onreadystatechange = hello(request);
+	request.onreadystatechange = afterConnectionFn(request);
 	request.send(null);
 }
 
 
 
 	
-function hello(request){
+function afterConnectionFn(request){
 	
 	if(request.readyState==4 && request.status==200){
 
